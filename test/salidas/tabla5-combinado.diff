@@ -1,0 +1,40 @@
+67,75c67,95
+< 84>85>86>La persona con nombre Pers1ona está en la tabla.
+< 87>Persona 100: Pers1ona, 1100 años
+< 88>89>90>La persona con nombre Pers7ona está en la tabla.
+< 91>Persona 700: Pers7ona, 7700 años
+< 92>#  elimino dos elementos que colisionan y verifico que no pertenecen.
+< 93>94>La persona con nombre Pers1ona NO está en la tabla.
+< 95>96>La persona con nombre Persona7 NO está en la tabla.
+< 97>#  libero la tabla.
+< 98>99>Fin.
+---
+> 84>85>86>La persona con nombre Pers1ona NO está en la tabla.
+> 87>La persona con nombre Pers1ona NO está en la lista.
+> 88>89>90>La persona con nombre Pers7ona NO está en la tabla.
+> 91>La persona con nombre Pers7ona NO e==902== Invalid read of size 8
+> ==902==    at 0x10E881: eliminarPersonaConNombreTPersonasLDE(rep_personasLDE*&, char const*) (personasLDE.cpp:211)
+> ==902==    by 0x10EDBF: eliminarPersonaDeTTablaPersonas(rep_tablaPersonas*&, char const*) (tablaPersonas.cpp:42)
+> ==902==    by 0x10CD6F: main_eliminarPersonaDeTTablaPersonas(rep_tablaPersonas*&) (principal.cpp:1082)
+> ==902==    by 0x10A1C9: main (principal.cpp:398)
+> ==902==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==902== 
+> ==902== 
+> ==902== Process terminating with default action of signal 11 (SIGSEGV)
+> ==902==  Access not within mapped region at address 0x0
+> ==902==    at 0x10E881: eliminarPersonaConNombreTPersonasLDE(rep_personasLDE*&, char const*) (personasLDE.cpp:211)
+> ==902==    by 0x10EDBF: eliminarPersonaDeTTablaPersonas(rep_tablaPersonas*&, char const*) (tablaPersonas.cpp:42)
+> ==902==    by 0x10CD6F: main_eliminarPersonaDeTTablaPersonas(rep_tablaPersonas*&) (principal.cpp:1082)
+> ==902==    by 0x10A1C9: main (principal.cpp:398)
+> ==902==  If you believe this happened as a result of a stack
+> ==902==  overflow in your program's main thread (unlikely but
+> ==902==  possible), you can try to increase the size of the
+> ==902==  main thread stack using the --main-stacksize= flag.
+> ==902==  The main thread stack size used in this run was 8388608.
+> ==902== 240 bytes in 2 blocks are definitely lost in loss record 4 of 9
+> ==902==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==902==    by 0x10DDCB: crearTPersona(unsigned int, unsigned int, char const*, rep_agendaLS*) (persona.cpp:15)
+> ==902==    by 0x10AEC3: main_crearPersona(rep_persona*&, rep_agendaLS*&) (principal.cpp:627)
+> ==902==    by 0x1098C9: main (principal.cpp:248)
+> ==902== 
+> Segmentation fault
